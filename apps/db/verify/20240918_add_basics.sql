@@ -4,6 +4,10 @@ DO
 $$
     BEGIN
         ASSERT (
+            SELECT TRUE FROM pg_catalog.pg_type WHERE typname = 'account_type'
+        );
+
+        ASSERT (
             SELECT TRUE FROM pg_catalog.pg_tables WHERE tablename = 'account'
         );
 

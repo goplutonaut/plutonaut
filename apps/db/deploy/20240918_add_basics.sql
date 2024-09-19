@@ -1,10 +1,14 @@
 BEGIN;
 
+CREATE TYPE account_type AS ENUM ('ASSET', 'LIABILITY', 'EQUITY', 'REVENUE', 'EXPENSE');
+
 CREATE TABLE account
 (
     number      INT PRIMARY KEY,
+    type        account_type             NOT NULL,
     name        TEXT                     NOT NULL,
     description TEXT                     NULL,
+
 
     created_at  TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at  TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
