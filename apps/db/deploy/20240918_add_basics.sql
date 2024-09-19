@@ -1,3 +1,5 @@
+BEGIN;
+
 CREATE TABLE account
 (
     number      INT PRIMARY KEY,
@@ -32,3 +34,5 @@ CREATE TABLE transaction_entry
     transaction_id BIGINT REFERENCES transaction (id),
     account_no     INT REFERENCES account (number)
 );
+
+COMMIT;
