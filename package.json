@@ -1,0 +1,18 @@
+{
+  "name": "@plutonaut/root",
+  "version": "0.1.0",
+  "description": "Home accounting made easy",
+  "homepage": "https://github.com/goplutonaut/plutonaut#readme",
+  "bugs": {
+    "url": "https://github.com/goplutonaut/plutonaut/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Manuel Pacheco",
+    "email": "manuel@qualikode.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goplutonaut/plutonaut.git"
+  }
+}
