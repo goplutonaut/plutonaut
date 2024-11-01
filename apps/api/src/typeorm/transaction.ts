@@ -2,9 +2,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { TransactionEntry } from './transaction-entry';
 
 @Entity('transaction')
 export class Transaction {
@@ -18,7 +20,9 @@ export class Transaction {
   description: string;
 
   @Column({ type: 'date', nullable: false })
-  date: Date;
+  date: string;
+
+  // Timestamps
 
   @CreateDateColumn({
     name: 'created_at',
@@ -35,4 +39,9 @@ export class Transaction {
     default: () => 'CURRENT_TIMESTAMP',
   })
   updatedAt: Date;
+
+  // Relations
+
+  @OneToMany(() => TransactionEntry, (entry) => entry.transaction)
+  entries: TransactionEntry[];
 }
