@@ -2,6 +2,7 @@ import { DataSourceOptions } from 'typeorm';
 
 import { Account } from './account';
 import { Transaction } from './transaction';
+import { TransactionEntry } from './transaction-entry';
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
@@ -10,5 +11,5 @@ export const dataSourceOptions: DataSourceOptions = {
   database: 'plutonaut',
   username: 'plutonaut',
   password: 'plutonaut',
-  entities: [Account, Transaction],
+  entities: [Account, Transaction, TransactionEntry],
 };

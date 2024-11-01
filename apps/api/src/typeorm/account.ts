@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+
+import { TransactionEntry } from './transaction-entry';
 
 export type AccountType =
   | 'ASSET'
@@ -24,4 +26,9 @@ export class Account {
 
   @Column({ type: 'text', nullable: true })
   description: string;
+
+  // Relations
+
+  @OneToMany(() => TransactionEntry, (entry) => entry.account)
+  entries: TransactionEntry[];
 }
