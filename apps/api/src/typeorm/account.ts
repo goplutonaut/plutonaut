@@ -2,12 +2,15 @@ import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 
 import { TransactionEntry } from './transaction-entry';
 
-export type AccountType =
-  | 'ASSET'
-  | 'LIABILITY'
-  | 'EQUITY'
-  | 'REVENUE'
-  | 'EXPENSE';
+export type AccountType = (typeof ACCOUNT_TYPES)[number];
+
+export const ACCOUNT_TYPES = [
+  'ASSET',
+  'LIABILITY',
+  'EQUITY',
+  'REVENUE',
+  'EXPENSE',
+] as const;
 
 @Entity('account')
 export class Account {
@@ -16,7 +19,7 @@ export class Account {
 
   @Column({
     type: 'enum',
-    enum: ['ASSET', 'LIABILITY', 'EQUITY', 'REVENUE', 'EXPENSE'],
+    enum: ACCOUNT_TYPES,
     nullable: false,
   })
   type: AccountType;
