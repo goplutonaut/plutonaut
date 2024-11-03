@@ -11,7 +11,7 @@ import { TransactionEntry } from './transaction-entry';
 @Entity('transaction')
 export class Transaction {
   @PrimaryGeneratedColumn('increment', { type: 'bigint' })
-  id: number;
+  id: string;
 
   @Column({ type: 'text', nullable: false })
   name: string;

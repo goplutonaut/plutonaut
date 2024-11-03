@@ -14,19 +14,13 @@ import { Transaction } from './transaction';
 @Entity('transaction_entry')
 export class TransactionEntry {
   @PrimaryGeneratedColumn('increment', { type: 'bigint' })
-  id: bigint;
+  id: string;
 
   @Column({ type: 'text', nullable: true })
   description: string;
 
   @Column({ type: 'numeric', nullable: false })
   amount: string;
-
-  @Column({ type: 'text', nullable: false })
-  name: string;
-
-  @Column({ type: 'date', nullable: false })
-  date: string;
 
   @CreateDateColumn({
     name: 'created_at',
