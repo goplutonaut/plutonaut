@@ -52,6 +52,7 @@
     "@nestjs/platform-express": "^10.0.2",
     "@nestjs/typeorm": "^10.0.2",
     "axios": "^1.6.0",
+    "bignumber.js": "^9.1.2",
     "http-status-codes": "^2.3.0",
     "pg": "^8.13.1",
     "reflect-metadata": "^0.1.13",
