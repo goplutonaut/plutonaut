@@ -1,6 +1,14 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Post,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { DataSource, Repository } from 'typeorm';
+import { DatabaseError } from 'pg';
+import { DataSource, Repository, QueryFailedError } from 'typeorm';
 import type { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 
 import { Transaction } from '../../typeorm/transaction';
@@ -26,27 +34,50 @@ export class TransactionsController {
   async create(@Body() b: unknown): Promise<void> {
     const body = schemas.create.body.parse(b);
 
-    await this.dataSource.transaction(async (manager) => {
-      const transaction: QueryDeepPartialEntity<Transaction> = {
-        name: body.name,
-        description: body.description,
-        date: body.date,
-      };
+    try {
+      await this.dataSource.transaction(async (manager) => {
+        const transaction: QueryDeepPartialEntity<Transaction> = {
+          name: body.name,
+          description: body.description,
+          date: body.date,
+        };
 
-      const transactionResult = await manager.insert(Transaction, transaction);
-      const transactionId: bigint = transactionResult.identifiers[0].id;
+        const transactionResult = await manager.insert(
+          Transaction,
+          transaction
+        );
+        const transactionId: bigint = transactionResult.identifiers[0].id;
 
-      const entries = body.entries.map(
-        (entry): QueryDeepPartialEntity<TransactionEntry> => ({
-          description: entry.description,
-          amount: entry.amount.toString(),
+        const entries = body.entries.map(
+          (entry): QueryDeepPartialEntity<TransactionEntry> => ({
+            description: entry.description,
+            amount: entry.amount.toString(),
 
-          transactionId,
-          accountNo: entry.accountNo,
-        })
-      );
+            transactionId,
+            accountNo: entry.accountNo,
+          })
+        );
 
-      await manager.insert(TransactionEntry, entries);
-    });
+        await manager.insert(TransactionEntry, entries);
+      });
+    } catch (e) {
+      // (Trigger-based) Check constraint
+      if (e instanceof QueryFailedError) {
+        const db = e.driverError as DatabaseError;
+
+        if (db.code === '23514') {
+          throw new HttpException(
+            {
+              type: 'DatabaseError',
+              code: db.code,
+              message: db.message,
+            },
+            HttpStatus.BAD_REQUEST
+          );
+        }
+      }
+
+      throw e;
+    }
   }
 }
