@@ -53,7 +53,7 @@ export class TransactionsController {
             amount: entry.amount.toString(),
 
             transactionId,
-            accountNumber: entry.accountNo,
+            accountNumber: entry.accountNumber,
           })
         );
 
