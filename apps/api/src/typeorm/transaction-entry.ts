@@ -13,8 +13,11 @@ import { Transaction } from './transaction';
 
 @Entity('transaction_entry')
 export class TransactionEntry {
-  @PrimaryGeneratedColumn('increment', { type: 'bigint' })
-  id: string;
+  @PrimaryGeneratedColumn('increment', {
+    name: 'transaction_entry_id',
+    type: 'bigint',
+  })
+  transactionEntryId: string;
 
   @Column({ type: 'text', nullable: true })
   description: string;
@@ -44,13 +47,16 @@ export class TransactionEntry {
   transactionId: bigint;
 
   @ManyToOne(() => Transaction, (transaction) => transaction.entries)
-  @JoinColumn({ name: 'transaction_id', referencedColumnName: 'id' })
+  @JoinColumn({
+    name: 'transaction_id',
+    referencedColumnName: 'transactionId',
+  })
   transaction: Transaction;
 
-  @Column({ name: 'account_no', type: 'int', nullable: false })
-  accountNo: number;
+  @Column({ name: 'account_number', type: 'int', nullable: false })
+  accountNumber: number;
 
   @ManyToOne(() => Account, (account) => account.entries)
-  @JoinColumn({ name: 'account_no', referencedColumnName: 'number' })
+  @JoinColumn({ name: 'account_number', referencedColumnName: 'accountNumber' })
   account: Account;
 }

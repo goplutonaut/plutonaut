@@ -10,8 +10,11 @@ import { TransactionEntry } from './transaction-entry';
 
 @Entity('transaction')
 export class Transaction {
-  @PrimaryGeneratedColumn('increment', { type: 'bigint' })
-  id: string;
+  @PrimaryGeneratedColumn('increment', {
+    name: 'transaction_id',
+    type: 'bigint',
+  })
+  transactionId: bigint;
 
   @Column({ type: 'text', nullable: false })
   name: string;
