@@ -14,8 +14,8 @@ export const ACCOUNT_TYPES = [
 
 @Entity('account')
 export class Account {
-  @PrimaryColumn({ type: 'integer' })
-  number: number;
+  @PrimaryColumn({ name: 'account_number', type: 'integer' })
+  accountNumber: number;
 
   @Column({
     type: 'enum',

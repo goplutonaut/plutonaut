@@ -15,7 +15,7 @@ export const create = {
       entries: z
         .array(
           z.object({
-            accountNo: z.number().positive(),
+            accountNumber: z.number().positive(),
             amount: z
               .string()
               .transform((s) => new BigNumber(s))

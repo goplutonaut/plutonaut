@@ -6,3 +6,4 @@
 20241110_add_account_currency 2024-11-10T22:12:40Z Manuel Pacheco <contact@manuelpacheco.dev> # Add account currency
 20241111_update_entry_fks 2024-11-11T00:36:15Z Manuel Pacheco <contact@manuelpacheco.dev> # Update entry fks
 20241112_check_transaction_is_balanced 2024-11-11T02:58:50Z Manuel Pacheco <contact@manuelpacheco.dev> # Check transaction is balanced
+20250119_rename_columns 2025-01-19T11:21:53Z Manuel Pacheco <contact@manuelpacheco.dev> # rename columns
