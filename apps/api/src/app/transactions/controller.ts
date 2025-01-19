@@ -15,7 +15,6 @@ import { Transaction } from '../../typeorm/transaction';
 import { TransactionEntry } from '../../typeorm/transaction-entry';
 
 import * as schemas from './schemas';
-import { CreateTransactionResponse } from './types';
 
 @Controller()
 export class TransactionsController {
