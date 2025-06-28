@@ -2,9 +2,9 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { Account } from '../../typeorm/account';
+import { Account } from '../../typeorm/account.js';
 
-import * as schemas from './schemas';
+import * as schemas from './schemas.js';
 
 @Controller()
 export class AccountsController {

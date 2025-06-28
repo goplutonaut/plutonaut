@@ -6,9 +6,9 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
-import { AppModule } from './app/app.module';
-import { ZodFilter } from './app/utils/zod-filter';
-import { TypeOrmFilter } from './app/utils/typeorm-filter';
+import { AppModule } from './app/app.module.js';
+import { ZodFilter } from './app/utils/zod-filter.js';
+import { TypeOrmFilter } from './app/utils/typeorm-filter.js';
 
 async function bootstrap() {
   const prefix = 'api';

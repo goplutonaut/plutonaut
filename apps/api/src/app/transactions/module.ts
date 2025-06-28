@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Transaction } from '../../typeorm/transaction';
+import { Transaction } from '../../typeorm/transaction.js';
 
-import { TransactionsController } from './controller';
+import { TransactionsController } from './controller.js';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Transaction])],

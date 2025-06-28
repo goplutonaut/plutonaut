@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import BigNumber from 'bignumber.js';
+import { BigNumber } from 'bignumber.js';
 
 // TODO Improve
 // Some of these validations can be also included at the database level

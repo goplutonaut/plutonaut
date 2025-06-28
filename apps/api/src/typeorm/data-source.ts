@@ -1,8 +1,8 @@
 import { DataSourceOptions } from 'typeorm';
 
-import { Account } from './account';
-import { Transaction } from './transaction';
-import { TransactionEntry } from './transaction-entry';
+import { Account } from './account.js';
+import { Transaction } from './transaction.js';
+import { TransactionEntry } from './transaction-entry.js';
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',

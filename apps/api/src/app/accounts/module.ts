@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Account } from '../../typeorm/account';
+import { Account } from '../../typeorm/account.js';
 
-import { AccountsController } from './controller';
+import { AccountsController } from './controller.js';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Account])],

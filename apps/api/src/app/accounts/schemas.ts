@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { ACCOUNT_TYPES } from '../../typeorm/account';
+import { ACCOUNT_TYPES } from '../../typeorm/account.js';
 
 export const create = {
   body: z
