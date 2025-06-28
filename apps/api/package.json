@@ -1,3 +1,4 @@
 {
-  "name": "@plutonaut/api"
+  "name": "@plutonaut/api",
+  "type": "module"
 }
