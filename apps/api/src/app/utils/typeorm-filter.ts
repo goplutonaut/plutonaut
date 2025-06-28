@@ -19,8 +19,8 @@ export class TypeOrmFilter implements ExceptionFilter {
     const response = host.switchToHttp().getResponse<Response>();
 
     const db = exception.driverError as DatabaseError;
-    const status =
-      PG_CODE_STATUSES[db.code] ?? HttpStatus.INTERNAL_SERVER_ERROR;
+    const code = db.code as keyof typeof PG_CODE_STATUSES;
+    const status = PG_CODE_STATUSES[code] ?? HttpStatus.INTERNAL_SERVER_ERROR;
 
     response.status(status).json({
       type: 'DatabaseError',

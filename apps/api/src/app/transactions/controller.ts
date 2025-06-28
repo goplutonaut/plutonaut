@@ -9,12 +9,12 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import { DatabaseError } from 'pg';
 import { DataSource, Repository, QueryFailedError } from 'typeorm';
-import type { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
+import type { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity.js';
 
-import { Transaction } from '../../typeorm/transaction';
-import { TransactionEntry } from '../../typeorm/transaction-entry';
+import { Transaction } from '../../typeorm/transaction.js';
+import { TransactionEntry } from '../../typeorm/transaction-entry.js';
 
-import * as schemas from './schemas';
+import * as schemas from './schemas.js';
 
 @Controller()
 export class TransactionsController {
@@ -45,7 +45,9 @@ export class TransactionsController {
           Transaction,
           transaction
         );
-        const transactionId: bigint = transactionResult.identifiers[0].id;
+        const identifier = transactionResult.identifiers[0];
+        if (!identifier) throw new Error('No identifier returned from insert'); 
+        const transactionId: bigint = identifier.id;
 
         const entries = body.entries.map(
           (entry): QueryDeepPartialEntity<TransactionEntry> => ({

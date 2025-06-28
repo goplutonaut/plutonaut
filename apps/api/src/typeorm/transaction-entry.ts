@@ -5,11 +5,12 @@ import {
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
+  type Relation,
   UpdateDateColumn,
 } from 'typeorm';
 
-import { Account } from './account';
-import { Transaction } from './transaction';
+import { Account } from './account.js';
+import { Transaction } from './transaction.js';
 
 @Entity('transaction_entry')
 export class TransactionEntry {
@@ -58,5 +59,5 @@ export class TransactionEntry {
 
   @ManyToOne(() => Account, (account) => account.entries)
   @JoinColumn({ name: 'account_number', referencedColumnName: 'accountNumber' })
-  account: Account;
+  account: Relation<Account>;
 }

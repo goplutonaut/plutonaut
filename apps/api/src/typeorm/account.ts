@@ -1,6 +1,6 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryColumn, type Relation } from 'typeorm';
 
-import { TransactionEntry } from './transaction-entry';
+import { TransactionEntry } from './transaction-entry.js';
 
 export type AccountType = (typeof ACCOUNT_TYPES)[number];
 
@@ -33,5 +33,5 @@ export class Account {
   // Relations
 
   @OneToMany(() => TransactionEntry, (entry) => entry.account)
-  entries: TransactionEntry[];
+  entries: Relation<TransactionEntry>[];
 }

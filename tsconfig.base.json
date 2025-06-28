@@ -1,20 +1,60 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
+    // Type Checking
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "useUnknownInCatchVariables": true,
+
+    // Modules
+    "baseUrl": ".",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "rootDir": ".",
+    "types": [],
+
+    // Emit
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "importHelpers": true,
+    "noEmitOnError": false,
+    "outDir": "dist",
     "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
+
+    // Javascript Support
+    "allowJs": true,
+
+    // Interop Constraints
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    // Language and Environment
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2020", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {}
+    "lib": ["ESNext"],
+    "target": "esnext",
+
+    // Projects
+    "composite": true,
+
+    // Completeness
+    "skipLibCheck": true
   },
-  "exclude": ["node_modules", "tmp"]
+  "include": [],
+  "files": []
 }
