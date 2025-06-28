@@ -17,16 +17,6 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "outFiles": [
-        "${workspaceFolder}/**/*.js"
-      ],
-      "sourceMapPathOverrides": {
-        "webpack://@plutonaut/*": "${workspaceFolder}/apps/*"
-      },
-      "resolveSourceMapLocations": [
-        "${workspaceFolder}/**",
-        "!**/node_modules/**"
-      ],
       "outputCapture": "std"
     }
   ]
