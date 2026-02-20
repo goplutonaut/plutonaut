@@ -1,0 +1,16 @@
+{
+  "cSpell.words": ["plutonaut"],
+  "sqltools.connections": [
+    {
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "database": "plutonaut",
+      "name": "plutonaut",
+      "username": "plutonaut"
+    }
+  ]
+}
