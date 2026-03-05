@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["plutonaut"],
+  "cSpell.words": ["plutonaut", "sqitch"],
   "sqltools.connections": [
     {
       "ssh": "Disabled",
