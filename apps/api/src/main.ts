@@ -13,6 +13,7 @@ import { TypeOrmFilter } from './app/utils/typeorm-filter.js';
 async function bootstrap() {
   const prefix = 'api';
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   app.setGlobalPrefix(prefix);
   app.useGlobalFilters(new ZodFilter());
   app.useGlobalFilters(new TypeOrmFilter());
@@ -21,7 +22,7 @@ async function bootstrap() {
   await app.listen(port);
 
   Logger.log(
-    `🚀 Application is running on: http://localhost:${port}/${prefix}`
+    `🚀 Application is running on: http://localhost:${port}/${prefix}`,
   );
 }
 
