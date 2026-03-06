@@ -15,11 +15,11 @@ sqitch deploy
 ### run server
 
 ```bash
-npx nx server api
+npx nx serve api
 ```
 
 ### run web
 
 ```bash
-npx nx dev web
+npx nx serve web
 ```
