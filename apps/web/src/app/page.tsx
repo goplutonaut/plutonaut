@@ -19,3 +19,8 @@ export default function Index() {
     </div>
   );
 }
+
+export const metadata = {
+  title: 'Home | Plutonaut',
+  description: 'Welcome to Plutonaut',
+};
