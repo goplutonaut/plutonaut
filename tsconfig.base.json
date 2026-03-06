@@ -19,7 +19,6 @@
     "useUnknownInCatchVariables": true,
 
     // Modules
-    "baseUrl": ".",
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "rootDir": ".",
