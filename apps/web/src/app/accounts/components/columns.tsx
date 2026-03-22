@@ -3,8 +3,8 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { ArrowUpDown } from 'lucide-react';
 
-import { Account } from '../../../types/account';
 import { Button } from '../../../components/ui/button';
+import { Account } from '../../../types/account';
 
 export const columns: ColumnDef<Account>[] = [
   {
