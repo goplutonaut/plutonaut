@@ -1,3 +1,5 @@
+import { cn } from '@plutonaut/web/src/lib/utils';
+
 export const MainContainer = ({
   children,
   className,
@@ -5,7 +7,5 @@ export const MainContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return (
-    <div className={`max-w-5xl mx-auto ${className || ''}`}>{children}</div>
-  );
+  return <div className={cn('max-w-5xl mx-auto', className)}>{children}</div>;
 };
