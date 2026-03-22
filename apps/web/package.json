@@ -1,0 +1,6 @@
+{
+  "name": "@plutonaut/web",
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4"
+  }
+}
