@@ -19,6 +19,24 @@ const config = [
   {
     ignores: ['.next/**/*'],
   },
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    rules: {
+      '@nx/enforce-module-boundaries': [
+        'error',
+        {
+          allow: ['@plutonaut/web/src/**'],
+          enforceBuildableLibDependency: true,
+          depConstraints: [
+            {
+              sourceTag: '*',
+              onlyDependOnLibsWithTags: ['*'],
+            },
+          ],
+        },
+      ],
+    },
+  },
 ];
 
 export default config;
