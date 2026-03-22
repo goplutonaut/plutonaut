@@ -11,11 +11,11 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "components": "@plutonaut/web/src/components",
+    "utils": "@plutonaut/web/src/lib/utils",
+    "ui": "@plutonaut/web/src/components/ui",
+    "lib": "@plutonaut/web/src/lib",
+    "hooks": "@plutonaut/web/src/hooks"
   },
   "iconLibrary": "lucide"
 }
