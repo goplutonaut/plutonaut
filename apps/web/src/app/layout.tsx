@@ -1,6 +1,10 @@
 import { MainContainer } from '../components/main-container';
 import { Navbar } from '../components/navbar';
 import './global.css';
+import { Geist } from 'next/font/google';
+import { cn } from '@plutonaut/web/src/lib/utils';
+
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata = {
   title: 'Plutonaut',
@@ -13,8 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-slate-50 dark:bg-slate-800 min-h-screen text-slate-900 dark:text-slate-100">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn('font-sans', geist.variable)}
+    >
+      <body className="min-h-screen">
         <Navbar />
         <MainContainer className="mt-8 px-4">{children}</MainContainer>
       </body>
