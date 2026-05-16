@@ -10,7 +10,7 @@ export const SectionBox = ({
   return (
     <div
       className={cn(
-        'bg-white dark:bg-slate-700 p-6 rounded-xl border border-slate-200 dark:border-slate-600 space-y-4 shadow-sm',
+        'bg-card p-6 rounded-xl border border-border space-y-4 shadow-sm',
         className,
       )}
     >
