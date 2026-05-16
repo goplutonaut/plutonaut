@@ -1,15 +1,17 @@
 {
   "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "new-york",
+  "style": "radix-nova",
   "rsc": true,
   "tsx": true,
   "tailwind": {
     "config": "apps/web/tailwind.config.js",
-    "css": "apps/web/src/app/global.css",
-    "baseColor": "slate",
+    "css": "src/app/global.css",
+    "baseColor": "neutral",
     "cssVariables": true,
     "prefix": ""
   },
+  "iconLibrary": "lucide",
+  "rtl": false,
   "aliases": {
     "components": "@plutonaut/web/src/components",
     "utils": "@plutonaut/web/src/lib/utils",
@@ -17,5 +19,7 @@
     "lib": "@plutonaut/web/src/lib",
     "hooks": "@plutonaut/web/src/hooks"
   },
-  "iconLibrary": "lucide"
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "registries": {}
 }
