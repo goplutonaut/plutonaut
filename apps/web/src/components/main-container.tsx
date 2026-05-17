@@ -1,3 +1,5 @@
+import { cn } from '@plutonaut/web/src/lib/utils';
+
 export const MainContainer = ({
   children,
   className,
@@ -6,6 +8,6 @@ export const MainContainer = ({
   className?: string;
 }) => {
   return (
-    <div className={`max-w-5xl mx-auto ${className || ''}`}>{children}</div>
+    <div className={cn('max-w-5xl mx-auto px-4', className)}>{children}</div>
   );
 };
