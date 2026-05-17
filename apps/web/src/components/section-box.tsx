@@ -1,12 +1,12 @@
 import { cn } from '@plutonaut/web/src/lib/utils';
 
-export const SectionBox = ({
+export function SectionBox({
   children,
   className,
 }: {
   children: React.ReactNode;
   className?: string;
-}) => {
+}) {
   return (
     <div
       className={cn(
@@ -17,4 +17,4 @@ export const SectionBox = ({
       {children}
     </div>
   );
-};
+}
