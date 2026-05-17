@@ -1,4 +1,12 @@
-// apps/web/src/types/account.ts
+export const ACCOUNT_TYPES_KEYS = [
+  'ASSET',
+  'LIABILITY',
+  'EQUITY',
+  'REVENUE',
+  'EXPENSE',
+] as const;
+
+export type AccountType = (typeof ACCOUNT_TYPES_KEYS)[number];
 
 export interface Account {
   accountNumber: number;
@@ -6,11 +14,3 @@ export interface Account {
   name: string;
   description?: string;
 }
-
-// It's a good practice to mirror your API's ACCOUNT_TYPES enum
-export type AccountType =
-  | 'ASSET'
-  | 'LIABILITY'
-  | 'EQUITY'
-  | 'REVENUE'
-  | 'EXPENSE';
