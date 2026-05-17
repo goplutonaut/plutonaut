@@ -7,5 +7,7 @@ export const MainContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={cn('max-w-5xl mx-auto', className)}>{children}</div>;
+  return (
+    <div className={cn('max-w-5xl mx-auto px-4', className)}>{children}</div>
+  );
 };
