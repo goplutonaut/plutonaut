@@ -18,6 +18,14 @@
   "workspaces": [
     "apps/*"
   ],
+  "scripts": {
+    "clean:all": "npm run clean:nx && npm run clean:web",
+    "clean:nx": "nx reset",
+    "clean:web": "nx clean web",
+    "dev:clean": "npm run clean:all && nx serve web",
+    "preserve": "npm run clean:web",
+    "serve": "nx serve web"
+  },
   "dependencies": {
     "@nestjs/common": "^11.1.3",
     "@nestjs/core": "^11.1.3",

@@ -30,6 +30,11 @@
           "dev": false
         }
       }
+    },
+
+    "clean": {
+      "command": "rm -rf apps/web/.next",
+      "options": { "cwd": "." }
     }
   }
 }
