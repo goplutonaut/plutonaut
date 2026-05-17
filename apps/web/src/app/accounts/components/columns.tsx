@@ -1,10 +1,9 @@
 'use client';
 
+import { Button } from '@plutonaut/web/src/components/ui/button';
+import { Account } from '@plutonaut/web/src/types/account';
 import { ColumnDef } from '@tanstack/react-table';
 import { ArrowUpDown } from 'lucide-react';
-
-import { Button } from '../../../components/ui/button';
-import { Account } from '../../../types/account';
 
 export const columns: ColumnDef<Account>[] = [
   {
