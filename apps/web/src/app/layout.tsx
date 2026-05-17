@@ -1,5 +1,6 @@
 import { Header } from '@plutonaut/web/src/components/header';
 import { MainContainer } from '@plutonaut/web/src/components/main-container';
+import Providers from '@plutonaut/web/src/components/providers';
 import { cn } from '@plutonaut/web/src/lib/utils';
 import { Geist } from 'next/font/google';
 import './global.css';
@@ -24,7 +25,9 @@ export default function RootLayout({
     >
       <body className="min-h-screen">
         <Header />
-        <MainContainer className="mt-8">{children}</MainContainer>
+        <Providers>
+          <MainContainer className="mt-8">{children}</MainContainer>
+        </Providers>
       </body>
     </html>
   );
