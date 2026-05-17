@@ -1,13 +1,11 @@
 'use client';
 
+import { columns } from '@plutonaut/web/src/app/accounts/components/columns';
+import { DataTable } from '@plutonaut/web/src/app/accounts/components/data-table';
+import { SectionTitle } from '@plutonaut/web/src/components/section-title';
+import { ENV } from '@plutonaut/web/src/config/env.config';
+import { Account } from '@plutonaut/web/src/types/account';
 import { useQuery } from '@tanstack/react-query';
-
-import { SectionTitle } from '../../../components/section-title';
-
-import { Account } from '../../../types/account';
-import { ENV } from '../../../config/env.config';
-import { DataTable } from './data-table';
-import { columns } from './columns';
 
 const fetchAccounts = async (): Promise<Account[]> => {
   const res = await fetch(`${ENV.API_URL}/accounts`, {
@@ -19,7 +17,7 @@ const fetchAccounts = async (): Promise<Account[]> => {
   return res.json();
 };
 
-export const ChartOfAccounts = () => {
+function ChartOfAccounts() {
   const {
     data: accounts,
     isLoading,
@@ -36,12 +34,11 @@ export const ChartOfAccounts = () => {
       {isError && (
         <p className="text-sm text-red-500">Failed to load accounts.</p>
       )}
-
       {accounts && !isError && !isLoading && (
-        <div className="bg-white dark:bg-slate-700 p-6 rounded-xl border border-slate-200 dark:border-slate-600 space-y-4 shadow-sm">
-          <DataTable columns={columns} data={accounts} />
-        </div>
+        <DataTable columns={columns} data={accounts} />
       )}
     </>
   );
-};
+}
+
+export default ChartOfAccounts;
